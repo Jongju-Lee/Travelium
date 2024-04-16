@@ -1,0 +1,24 @@
+
+
+
+	section.destinations
+		.inner
+			.heading
+				h2 > span
+			.items
+				.item
+					img
+					span.desc > b
+					.btn_side > span
+	section.get_off
+		.background
+			::before(overlay)
+		.heading
+			h2
+				span
+				b
+			a.btn_book_now
+			
+			
+			
+			

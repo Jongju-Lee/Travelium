@@ -1,0 +1,25 @@
+
+
+
+	header
+		nav
+			.logo > a > img
+			ul.gnb
+				li > a
+	section.intro
+		.search_box
+			.search_box_title
+				h3 > span
+			.search_box_content
+				form
+					.input_field
+						{
+						b
+						input[type=text]
+						font-icon
+						} * 4 repeat
+					button.btn_search
+					
+					
+					
+					

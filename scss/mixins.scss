@@ -1,0 +1,15 @@
+// Import
+@import "variables";
+// Mixins
+@mixin heading_feature {
+  h2 {
+    font-size: map-get($map: $font-size, $key: h1);
+    text-align: center;
+    span {
+      display: block;
+      font-size: map-get($map: $font-size, $key: h3) * 1.2;
+      font-weight: normal;
+      margin-top: 20px;
+    }
+  }
+}

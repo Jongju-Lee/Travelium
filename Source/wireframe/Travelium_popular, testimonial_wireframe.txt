@@ -1,0 +1,31 @@
+
+
+
+	section.popular
+		.heading
+			h2 > span
+		.popular_slider
+			.pupular_slider_item
+				img
+				span.desc > b
+				a.btn_book_now
+				.info
+					.price
+						::before(font-icon)
+						span
+						em
+					.star_rating
+						span > ::before(font-icon)
+	section.testimonial
+		.inner
+			.items
+				.item
+					.double_quote > font-icon
+					p.desc > b
+					.user_info
+						.face > img
+						span.name > b
+	
+	
+	
+	

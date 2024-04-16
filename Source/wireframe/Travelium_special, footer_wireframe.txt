@@ -1,0 +1,32 @@
+
+
+
+	section.special
+		.inner
+			.package
+				.heading
+					h2 > span
+				.slider
+					.item
+						img
+						span.desc > b
+						a.btn_book_now
+			.subscribe
+				.heading
+					h2 > span
+				form
+					.input_field
+						input[type=email]
+						button.btn_subscribe
+	footer
+			.footer_header
+				.inner
+			.footer_content
+				.inner
+					.left
+						.logo_slogan
+					.right
+						p.copyright > b
+						
+						
+						
