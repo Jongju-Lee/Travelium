@@ -6,10 +6,13 @@
 			.package
 				.heading
 					h2 > span
-				.slider
+				.special_slider
 					.item
 						img
-						span.desc > b
+						.desc
+							b
+							em
+							span
 						a.btn_book_now
 			.subscribe
 				.heading
@@ -21,12 +24,18 @@
 	footer
 			.footer_header
 				.inner
+					.phone
+						span.number
+					.lnb > a * 4
 			.footer_content
 				.inner
 					.left
 						.logo_slogan
+							.logo > a > span.slogan
+						.sns > a > font-icon * 4
 					.right
 						p.copyright > b
+						
 						
 						
 						

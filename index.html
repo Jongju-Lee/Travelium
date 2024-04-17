@@ -23,6 +23,8 @@
     <!-- Custom CSS & JS -->
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/custom.js"></script>
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="./css/responsive.css">
   </head>
   <body>
     <div class="container">
@@ -30,26 +32,26 @@
       <header>
         <nav>
           <div class="logo">
-            <a href="#none">Travelium</a>
+            <a href="#">Travelium</a>
           </div>
           <ul class="gnb">
-            <li><a href="#none">홈으로</a></li>
-            <li><a href="#none">인기 여행지</a></li>
-            <li><a href="#none">특별할인</a></li>
-            <li><a href="#none">자유여행</a></li>
-            <li><a href="#none">패키지여행</a></li>
-            <li><a href="#none">생생후기</a></li>
+            <li><a href="#">홈으로</a></li>
+            <li><a href="#destinations">인기 여행지</a></li>
+            <li><a href="#get_off">특별할인</a></li>
+            <li><a href="#popular">자유여행</a></li>
+            <li><a href="#special">패키지여행</a></li>
+            <li><a href="#testimonial">생생후기</a></li>
           </ul>
         </nav>
       </header>
       <!-- ########## Main ########## -->
       <main>
         <!-- ########## Section - Intro ########## -->
-        <section class="intro">
+        <section id="intro">
           <div class="search_box">
             <div class="title">
               <h3>
-                지금바로 휴가를 계획해 보세요.<br />
+                지금 바로 휴가를 계획해 보세요<br />
                 <span>99,000</span> 부터!
               </h3>
             </div>
@@ -81,7 +83,7 @@
           </div>
         </section>
         <!-- ########## Section - Destinations ########## -->
-        <section class="destinations">
+        <section id="destinations">
           <div class="inner">
             <div class="heading">
               <h2>
@@ -150,7 +152,7 @@
           </div>
         </section>
         <!-- ########## Section - Get off ########## -->
-        <section class="get_off">
+        <section id="get_off">
           <div class="background"></div>
           <div class="heading">
             <h2>
@@ -162,12 +164,12 @@
           </div>
         </section>
         <!-- ########## Section - Popular ########## -->
-        <section class="popular">
+        <section id="popular">
           <div class="heading">
             <h2>
               인기 자유여행
               <span>
-                인기 투어 패키지로 소중한 추억을 만드세요!<br />
+                인기 투어 패키지로 소중한 추억을 만들어 보세요!<br />
                 이용객들의 후기, 예약 수를 기반으로 선정하였습니다.
               </span>
             </h2>
@@ -323,12 +325,176 @@
           </div>
         </section>
         <!-- ########## Section - Testimonial ########## -->
-        <section class="testimonial"></section>
+        <section id="testimonial">
+          <div class="inner">
+            <div class="heading">
+              <h2>
+                생생 후기
+                <span>이용객들이 직접 남긴 후기 입니다!</span>
+              </h2>
+            </div>
+            <div class="items">
+              <div class="item">
+                <div class="double_quote"></div>
+                <p class="desc">
+                  <b>발리로 휴가를 다녀왔어요</b>
+                  한달 전, 이 여행사 통해서 발리에 다녀왔습니다. 애들이랑
+                  부모님까지 모시고 다 함께 갔는데요, 모두다 만족스러워 한
+                  여행이었습니다. 다음 여행도 이 여행사 통해서 갈 생각입니다!
+                </p>
+                <div class="user_info">
+                  <div class="face">
+                    <img src="./images/testi_01.jpg" alt="유저 01 프로필" />
+                  </div>
+                  <span class="name">
+                    <b>이수진 님</b>
+                    발리 여행
+                  </span>
+                </div>
+              </div>
+              <div class="item">
+                <div class="double_quote"></div>
+                <p class="desc">
+                  <b>너무 행복한 시간 보냈어요 ^^</b>
+                  친구가 이 여행사 통해서 잘 다녀왔다고 해서, 저도 이 여행사
+                  통해서 푸켓 다녀왔습니다. 특히, 코스 구성이 너무
+                  만족스러웠구요 같이 간 친구가 너무너무 좋아했어요. 감사합니다!
+                </p>
+                <div class="user_info">
+                  <div class="face">
+                    <img src="./images/testi_02.jpg" alt="유저 01 프로필" />
+                  </div>
+                  <span class="name">
+                    <b>이민혜 님</b>
+                    푸켓 여행
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- ########## Section - Special ########## -->
-        <section class="special"></section>
+        <section id="special">
+          <div class="inner">
+            <div class="package">
+              <div class="heading">
+                <h2>
+                  특별 할인 패키지
+                  <span>~ 04. 30 까지만 아래의 가격으로 특별할인!</span>
+                </h2>
+              </div>
+              <div class="special_slider">
+                <div class="item">
+                  <img src="./images/special_01.jpg" alt="하와이 바다 풍경" />
+                  <div class="desc">
+                    <b>1,699,000</b> <em>3박 5일</em>
+                    <span>미국, 하와이</span>
+                  </div>
+                  <a class="btn_book_now" href="#none">예약하기</a>
+                </div>
+                <div class="item">
+                  <img src="./images/special_05.jpg" alt="다낭 풍경 사진" />
+                  <div class="desc">
+                    <b>899,000</b> <em>3박 4일</em>
+                    <span>다낭, 베트남</span>
+                  </div>
+                  <a class="btn_book_now" href="#none">예약하기</a>
+                </div>
+                <div class="item">
+                  <img src="./images/special_03.jpg" alt="푸켓 바다 풍경" />
+                  <div class="desc">
+                    <b>409,000</b> <em>3박 4일</em>
+                    <span>푸켓, 태국</span>
+                  </div>
+                  <a class="btn_book_now" href="#none">예약하기</a>
+                </div>
+                <div class="item">
+                  <img src="./images/special_04.jpg" alt="발리 바다 풍경" />
+                  <div class="desc">
+                    <b>1,099,000</b> <em>3박 4일</em>
+                    <span>발리, 인도네시아</span>
+                  </div>
+                  <a class="btn_book_now" href="#none">예약하기</a>
+                </div>
+              </div>
+            </div>
+            <div class="subscribe">
+              <div class="heading">
+                <h2>
+                  구독하세요!
+                  <span
+                    >프로모션 진행시 가장 먼저 메일로 소식을 전해드립니다.</span
+                  >
+                </h2>
+              </div>
+              <form action="">
+                <div class="input_field">
+                  <input type="email" placeholder="이메일을 입력하세요" />
+                  <button class="btn_subscribe">구독하기</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
       </main>
       <!-- ########## Footer ########## -->
-      <footer></footer>
+      <footer>
+        <div class="footer_header">
+          <div class="inner">
+            <div class="phone">
+              고객센터
+              <span class="number">02 - 1234 - 5678</span>
+            </div>
+            <div class="lnb">
+              <a href="#none">질문과 답변</a>
+              <a href="#none">자주 묻는 질문</a>
+              <a href="#none">공지사항</a>
+              <a href="#none">현금영수증 안내</a>
+            </div>
+          </div>
+        </div>
+          <div class="footer_content">
+            <div class="inner">
+              <div class="left">
+                <div class="content">
+                  <div class="logo_slogan">
+                    <div class="logo">
+                      <a href="#">Travelium 
+                        <span class="slogan">여행의 시작은 Travelium</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="sns">
+                    <a href="#none">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#none">
+                      <i class="bi bi-twitter-x"></i>
+                    </a>
+                    <a href="#none">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#none">
+                      <i class="bi bi-line"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <p class="copyright">
+                  <b>(주)트라벨리움</b>
+                  본사주소 : 서울시 광진구<br />
+                  사업자등록번호 : 123-45-67890<br />
+                  대표전화 : 02-123-4567<br />
+                  부득이한 사정에 의해 여행일정이 변경되는 경우 여행자의 사전 동의를 받습니다.
+                  <br /><br />
+                  Copyrightⓒ Travelium Corp. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

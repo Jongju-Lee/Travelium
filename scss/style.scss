@@ -10,11 +10,58 @@
 * {
   font-family: map-get($map: $font_family, $key: primary_kr);
 }
-/* ##### COMMON ##### */
+html {
+  scroll-behavior: smooth;
+}
+/* ##### COMMON - START ##### */
 .inner {
   width: 1280px;
   margin: auto;
 }
+/* Slick.js Custom Dots */
+.slick-dots {
+  bottom: -50px;
+}
+.slick-dots li button::before {
+  font-size: 12px;
+  padding: 5px;
+}
+.slick-dots li.slick-active button:before {
+  color: #333;
+  opacity: 1;
+}
+/* Slick.js Custom Arrows */
+.slick-prev,
+.slick-next {
+  width: calc(200px - 10px);
+  height: 100%;
+}
+.slick-prev {
+  left: 0;
+  z-index: 1000;
+  width: calc(200px - 10px);
+  height: 100%;
+}
+.slick-next {
+  right: 20px;
+  z-index: 1001;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-family: "bootstrap-icons";
+  font-size: 40px;
+  font-weight: bold;
+  color: map-get($map: $color, $key: primary);
+  opacity: 1;
+}
+.slick-prev:before {
+  content: "\F284";
+}
+.slick-next:before {
+  content: "\F285";
+}
+/* ##### COMMON - END ##### */
+
 /* ########## Header ########## */
 header {
   position: fixed;
@@ -23,6 +70,10 @@ header {
   width: 100%;
   height: 80px;
   z-index: 9999;
+  transition: 0.5s;
+  &.active {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
   nav {
     width: 1280px;
     height: inherit;
@@ -31,14 +82,7 @@ header {
     justify-content: space-between;
     align-items: center;
     .logo {
-      a {
-        display: block;
-        padding: 15px;
-        padding-left: 0;
-        font-family: map-get($map: $font_family, $key: primary_en);
-        font-size: map-get($map: $font_size, $key: h1);
-        color: map-get($map: $color, $key: primary);
-      }
+      @include logo;
     }
     ul.gnb {
       display: flex;
@@ -72,7 +116,7 @@ header {
   }
 }
 /* ########## Section - Intro ########## */
-section.intro {
+section#intro {
   position: relative;
   background-image: url(../images/travel_intro_01.png);
   height: 100vh;
@@ -170,7 +214,7 @@ section.intro {
   }
 }
 /* ########## Section - Destinations ########## */
-section.destinations {
+section#destinations {
   padding: 100px 0;
   .inner {
     .heading {
@@ -235,6 +279,7 @@ section.destinations {
           font-size: map-get($map: $font-size, $key: h3);
           font-weight: bold;
           font-family: map-get($map: $font_family, $key: primary_en);
+          color: map-get($map: $font-color, $key: secondary);
           transition: 0.2s;
           z-index: 10;
           &::after {
@@ -261,7 +306,7 @@ section.destinations {
   }
 }
 /* ########## Section - Get off ########## */
-section.get_off {
+section#get_off {
   position: relative;
   .background {
     position: relative;
@@ -325,7 +370,7 @@ section.get_off {
   }
 }
 /* ########## Section - Popular ########## */
-section.popular {
+section#popular {
   padding: 100px 0;
   .heading {
     @include heading_feature;
@@ -353,6 +398,7 @@ section.popular {
         text-align: center;
         font-size: map-get($map: $font-size, $key: h3);
         color: map-get($map: $color, $key: primary);
+        text-shadow: 0 0 5px rgba($color: #000000, $alpha: 1);
         transition: 0.35s;
         b {
           display: block;
@@ -366,7 +412,7 @@ section.popular {
       }
       .btn_book_now {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 8px 15px;
@@ -376,6 +422,10 @@ section.popular {
         border-radius: 5px;
         opacity: 0;
         transition: 0.35s;
+        &:hover {
+          background-color: #000;
+          color: #fff;
+        }
       }
       &:hover .btn_book_now {
         top: 60%;
@@ -392,7 +442,7 @@ section.popular {
         .price {
           text-align: center;
           margin-bottom: 5px;
-          font-size: map-get($map: $font-size, $key: body) * 1.1;
+          font-size: map-get($map: $font-size, $key: body) * 1.3;
           transition: 0.35s;
           &::before {
             content: "\F5AF";
@@ -428,7 +478,7 @@ section.popular {
       }
       &:hover .info {
         bottom: 0;
-        color: #fff;
+        color: map-get($map: $font-color, $key: primary);
       }
       &::after {
         content: "";
@@ -438,7 +488,7 @@ section.popular {
         width: 100%;
         height: 80px;
         background-color: map-get($map: $color, $key: primary);
-        transition: 0.35s;
+        transition: 0.2s;
         z-index: 0;
       }
       &:hover::after {
@@ -448,5 +498,329 @@ section.popular {
   }
 }
 /* ########## Section - Testimonial ########## */
+section#testimonial {
+  padding-top: 80px;
+  background-color: map-get($map: $color, $key: snow);
+  .inner {
+    .heading {
+      @include heading_feature;
+      h2 {
+        font-size: map-get($map: $font-size, $key: h2) * 1.2;
+      }
+    }
+    .items {
+      margin-top: 50px;
+      display: flex;
+      .item {
+        width: 50%;
+        padding: 80px;
+        padding-top: 0;
+        .double_quote {
+          &::after {
+            content: "\F6B0";
+            display: inline-block;
+            color: map-get($map: $color, $key: third);
+            font-family: "bootstrap-icons";
+            font-size: map-get($map: $font-size, $key: h1) * 1.5;
+            transform: translateX(-10px);
+          }
+        }
+        .desc {
+          line-height: 1.6em;
+          font-size: map-get($map: $font-size, $key: h3);
+
+          b {
+            display: block;
+            margin-bottom: 10px;
+            font-size: map-get($map: $font-size, $key: h3) * 1.1;
+          }
+        }
+        .user_info {
+          margin-top: 20px;
+          display: flex;
+          .face {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid map-get($map: $color, $key: third);
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .name {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: 10px;
+            padding: 5px 0;
+            b {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 /* ########## Section - Special ########## */
+section#special {
+  padding: 100px 0;
+  .inner {
+    .package {
+      position: relative;
+      .heading {
+        @include heading_feature;
+      }
+      .special_slider {
+        margin-top: 50px;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: calc(200px - 10px);
+          height: 100%;
+          background-color: rgba($color: #000000, $alpha: 0.5);
+          z-index: 1000;
+        }
+        &::before {
+          left: 0;
+        }
+        &::after {
+          right: 0;
+        }
+        .item {
+          position: relative;
+          margin: 0 10px;
+          width: 100%;
+          height: 400px;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .desc {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.5);
+            b,
+            em {
+              font-family: map-get($map: $font-family, $key: primary_en);
+              color: #fff;
+              font-size: map-get($map: $font-size, $key: h3) * 1.2;
+              letter-spacing: 1px;
+            }
+            b {
+              &::after {
+                content: "₩";
+              }
+            }
+            em {
+              font-style: normal;
+            }
+            span {
+              display: block;
+              margin-top: 10px;
+              color: #fff;
+              color: map-get($map: $color, $key: primary);
+              font-weight: bold;
+              font-size: map-get($map: $font-size, $key: h3) * 1.2;
+            }
+          }
+          .btn_book_now {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            padding: 8px 20px;
+            background-color: map-get($map: $color, $key: primary);
+            font-size: map-get($map: $font-size, $key: body) * 1.2;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.35s;
+            &:hover {
+              background-color: #000;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .subscribe {
+      margin-top: 120px;
+      .heading {
+        @include heading_feature;
+        h2 {
+          font-size: map-get($map: $font-size, $key: h2);
+        }
+      }
+      form {
+        .input_field {
+          position: relative;
+          width: 700px;
+          margin: auto;
+          margin-top: 30px;
+          input[type="email"] {
+            width: 100%;
+            height: 50px;
+            padding-left: 20px;
+            font-size: map-get($map: $font-size, $key: body) * 1.1;
+            color: map-get($map: $font-color, $key: secondary);
+            border-radius: 25px;
+            border: 1px solid map-get($map: $font-color, $key: third);
+            &::placeholder {
+              transition: 0.35s;
+            }
+            &:focus::placeholder {
+              opacity: 0;
+            }
+          }
+          .btn_subscribe {
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            padding: 0 30px;
+            height: 40px;
+            border-radius: 20px;
+            border: none;
+            background-color: map-get($map: $color, $key: primary);
+            font-size: map-get($map: $font-size, $key: body) * 1.1;
+            transition: 0.35s;
+            &:hover {
+              background-color: #000;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 /* ########## Footer ########## */
+footer {
+  .footer_header {
+    height: 50px;
+    background-color: map-get($map: $font-color, $key: primary);
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      height: 100%;
+      .phone {
+        font-size: map-get($map: $font-size, $key: h3) * 1.1;
+        font-weight: bold;
+        letter-spacing: 2px;
+        .number {
+          margin-left: 10px;
+          font-family: map-get($map: $font-family, $key: primary_en);
+        }
+      }
+      .lnb {
+        a {
+          font-size: map-get($map: $font-size, $key: h3);
+          transition: 0.2s;
+          &:not(:last-child)::after {
+            content: "|";
+            margin-left: 15px;
+            margin-right: 10px;
+          }
+          &:hover {
+            color: map-get($map: $font-color, $key: third);
+          }
+          &:hover::after {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .footer_content {
+    position: relative;
+    height: 300px;
+    background: url(../images/travel_intro_02.jpg) no-repeat center center /
+      cover;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      z-index: 0;
+    }
+    .inner {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      color: #fff;
+      height: 100%;
+      .left,
+      .right {
+        position: relative;
+        flex: 1;
+        height: 100%;
+      }
+      .left .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .logo_slogan {
+          .logo {
+            @include logo;
+            a .slogan {
+              display: block;
+              color: #fff;
+              margin-top: 10px;
+              font-size: map-get($map: $font-size, $key: body) * 1.1;
+            }
+          }
+        }
+        .sns {
+          a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 41px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 3px;
+            background-color: map-get($map: $color, $key: snow);
+            color: map-get($map: $font-color, $key: secondary);
+            font-size: map-get($map: $font-size, $key: body) * 1.2;
+            transition: 0.2s;
+            &:last-child {
+              line-height: 42px;
+            }
+            &:hover {
+              background-color: #000;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .right .copyright {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        line-height: 1.5em;
+        b {
+          display: block;
+          margin-bottom: 10px;
+          font-size: map-get($map: $font-size, $key: body) * 1.1;
+        }
+      }
+    }
+  }
+}

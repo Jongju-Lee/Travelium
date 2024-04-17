@@ -3,14 +3,14 @@
 
 	header
 		nav
-			.logo > a > img
+			.logo > a
 			ul.gnb
 				li > a
 	section.intro
 		.search_box
-			.search_box_title
+			.title
 				h3 > span
-			.search_box_content
+			.content
 				form
 					.input_field
 						{

@@ -9,7 +9,7 @@
 				.item
 					img
 					span.desc > b
-					.btn_side > span
+					a.btn_more
 	section.get_off
 		.background
 			::before(overlay)

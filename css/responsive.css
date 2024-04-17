@@ -1,0 +1,188 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+/* Noonnu Korean Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Google Web Font */
+/* Noonnu Korean Fonts */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* ##### Travelium - Responsive ##### */
+@media (max-width: 768px) {
+  /* ##### COMMON - START ##### */
+  .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+  /* ##### COMMON - END ##### */
+  /* ########## Header ########## */
+  header nav {
+    width: 100%;
+    padding: 0 20px;
+  }
+  /* ########## Section - Intro ########## */
+  section#intro .search_box {
+    top: 150px;
+    transform: translateX(-50%);
+  }
+  section#intro .search_box .title h3 {
+    color: #fff;
+    font-size: 24px;
+  }
+  section#intro .search_box .title h3 span {
+    margin-top: 15px;
+  }
+  section#intro .search_box .content {
+    margin-top: 10px;
+  }
+  section#intro .search_box .content form {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  section#intro .search_box .content form .input_field b {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  section#intro .search_box .content form .btn_search {
+    margin-top: 20px;
+    width: 100%;
+  }
+  /* ########## Section - Destinations ########## */
+  section#destinations .inner .heading h2 {
+    font-size: 36px;
+  }
+  section#destinations .inner .heading h2 span {
+    font-size: 26px;
+  }
+  section#destinations .inner .items {
+    gap: 0;
+    row-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  section#destinations .inner .items .item:first-child, section#destinations .inner .items .item:last-child {
+    grid-area: 1 span/1 span;
+  }
+  /* ########## Section - Get off ########## */
+  section#get_off .background::after {
+    width: 100%;
+  }
+  section#get_off .heading {
+    right: none;
+    left: 50%;
+    width: 100%;
+    padding-right: 0;
+    transform: translate(-50%, -50%);
+  }
+  section#get_off .heading h2 {
+    text-align: center;
+    font-size: 36px;
+  }
+  section#get_off .heading h2 span {
+    font-size: 30px;
+  }
+  section#get_off .heading h2 b em {
+    font-size: 36px;
+  }
+  section#get_off .heading .btn_book_now {
+    margin: auto;
+    margin-top: 30px;
+  }
+  /* ########## Section - Popular ########## */
+  section#popular {
+    padding: 80px 20px;
+  }
+  section#popular .heading {
+    margin-bottom: 40px;
+  }
+  section#popular .heading h2 {
+    font-size: 36px;
+  }
+  section#popular .heading h2 span {
+    font-size: 24px;
+  }
+  section#popular .popular_slider .item {
+    margin: 0;
+  }
+  section#popular .popular_slider .item .desc {
+    font-size: 24px;
+  }
+  section#popular .popular_slider .item .desc b {
+    font-size: 30px;
+  }
+  section#popular .popular_slider .item .btn_book_now {
+    font-size: 18px;
+  }
+  section#popular .popular_slider .item .info .price {
+    font-size: 24px;
+  }
+  /* ########## Section - Testimonial ########## */
+  section#testimonial {
+    padding: 80px 0;
+  }
+  section#testimonial .inner .heading h2 span {
+    font-size: 22px;
+  }
+  section#testimonial .inner .items {
+    margin-top: 70px;
+    flex-direction: column;
+    gap: 100px;
+  }
+  section#testimonial .inner .items .item {
+    padding: 0;
+    width: 100%;
+  }
+  section#testimonial .inner .items .item .desc {
+    margin-top: 10px;
+    font-size: 22px;
+  }
+  section#testimonial .inner .items .item .desc b {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+  section#testimonial .inner .items .item .user_info {
+    margin-top: 30px;
+  }
+  section#testimonial .inner .items .item .user_info .face {
+    width: 80px;
+    height: 80px;
+    border: 7px solid #bbc53d;
+  }
+  section#testimonial .inner .items .item .user_info .name {
+    font-size: 20px;
+    margin-left: 15px;
+    padding: 10px 0;
+  }
+  /* ########## Section - Special ########## */
+  section#special .inner .package .heading h2 {
+    font-size: 36px;
+  }
+  section#special .inner .package .special_slider::before, section#special .inner .package .special_slider::after {
+    display: none;
+  }
+  section#special .inner .package .special_slider .item {
+    margin: 0;
+    height: 350px;
+  }
+  section#special .inner .package .special_slider .item .desc {
+    top: 30px;
+  }
+  section#special .inner .package .special_slider .item .desc b,
+  section#special .inner .package .special_slider .item .desc em,
+  section#special .inner .package .special_slider .item .desc span {
+    font-size: 26px;
+  }
+  section#special .inner .subscribe form .input_field {
+    width: 100%;
+  }
+  section#special .inner .subscribe form .input_field .btn_subscribe {
+    padding: 0 20px;
+  }
+}

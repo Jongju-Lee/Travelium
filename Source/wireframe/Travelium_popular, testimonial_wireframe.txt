@@ -5,7 +5,7 @@
 		.heading
 			h2 > span
 		.popular_slider
-			.pupular_slider_item
+			.item
 				img
 				span.desc > b
 				a.btn_book_now
@@ -15,7 +15,7 @@
 						span
 						em
 					.star_rating
-						span > ::before(font-icon)
+						span > ::before(font-icon) * 5
 	section.testimonial
 		.inner
 			.items
@@ -25,6 +25,9 @@
 					.user_info
 						.face > img
 						span.name > b
+						
+						
+						
 	
 	
 	
